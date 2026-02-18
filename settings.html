@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Settings</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="settings.html" class="jnt-nav__link is-active">Settings</a></li>
+        <li><a href="jt/proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="jt/07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="jt/08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div class="jnt-settings">
+        <h1 class="jnt-settings__title">Settings</h1>
+        <p class="jnt-settings__subtext">Set your preferences for intelligent job matching.</p>
+
+        <form id="jnt-settings-form" class="jnt-settings-form">
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label" for="roleKeywords">Role keywords</label>
+            <input type="text" id="roleKeywords" class="kn-input" placeholder="e.g. Frontend, React, Product Manager" autocomplete="off">
+          </div>
+
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label">Preferred locations</label>
+            <select id="preferredLocations" class="kn-input jnt-select-multi" multiple size="5"></select>
+            <span class="jnt-form-hint">Hold Ctrl/Cmd to select multiple.</span>
+          </div>
+
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label">Preferred mode</label>
+            <div class="jnt-checkbox-group">
+              <label class="jnt-checkbox-label">
+                <input type="checkbox" name="preferredMode" value="Remote" class="jnt-checkbox"> Remote
+              </label>
+              <label class="jnt-checkbox-label">
+                <input type="checkbox" name="preferredMode" value="Hybrid" class="jnt-checkbox"> Hybrid
+              </label>
+              <label class="jnt-checkbox-label">
+                <input type="checkbox" name="preferredMode" value="Onsite" class="jnt-checkbox"> Onsite
+              </label>
+            </div>
+          </div>
+
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label" for="experienceLevel">Experience level</label>
+            <select id="experienceLevel">
+              <option value="">Any</option>
+              <option value="Fresher">Fresher</option>
+              <option value="0-1">0-1</option>
+              <option value="1-3">1-3</option>
+              <option value="3-5">3-5</option>
+            </select>
+          </div>
+
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label" for="skills">Skills</label>
+            <input type="text" id="skills" class="kn-input" placeholder="e.g. Java, React, SQL" autocomplete="off">
+          </div>
+
+          <div class="jnt-form-group">
+            <label class="jnt-form-group__label">Minimum match score <span id="minMatchScoreValue">40</span></label>
+            <input type="range" id="minMatchScore" class="jnt-slider" min="0" max="100" value="40">
+          </div>
+
+          <button type="submit" class="kn-btn kn-btn--primary">Save preferences</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="js/test-checklist.js"></script>
+  <script src="js/preferences.js"></script>
+  <script src="data/jobs.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

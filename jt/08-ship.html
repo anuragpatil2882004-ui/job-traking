@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Ship</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="../index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="../dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="../saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="../digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="../settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="08-ship.html" class="jnt-nav__link is-active">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div class="jnt-ship-page">
+        <!-- Ship Status Summary -->
+        <div class="jnt-ship-summary">
+          <div class="jnt-ship-summary__item">
+            <span class="jnt-ship-summary__label">All tests completed</span>
+            <span id="jnt-ship-test-status" class="jnt-ship-summary__status jnt-ship-summary__status--pending">PENDING</span>
+          </div>
+          <div class="jnt-ship-summary__item">
+            <span class="jnt-ship-summary__label">All artifacts submitted</span>
+            <span id="jnt-ship-link-status" class="jnt-ship-summary__status jnt-ship-summary__status--pending">PENDING</span>
+          </div>
+        </div>
+
+        <!-- Locked State -->
+        <div id="jnt-ship-lock" class="jnt-ship-section" style="display: none;">
+          <h2 class="jnt-ship-section__title">C) Ship Status</h2>
+          <div class="jnt-ship-locked">
+            <p class="jnt-ship-locked__text">Complete the following requirements to unlock shipping:</p>
+            <ul class="jnt-ship-locked__list">
+              <li id="jnt-ship-req-tests" class="jnt-ship-locked__item">
+                <span class="jnt-ship-locked__bullet">○</span>
+                <span class="jnt-ship-locked__text">Complete all 10 tests on the Test checklist</span>
+              </li>
+              <li id="jnt-ship-req-links" class="jnt-ship-locked__item">
+                <span class="jnt-ship-locked__bullet">○</span>
+                <span class="jnt-ship-locked__text">Provide all 3 artifact links on the Proof page</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ready to Ship State -->
+        <div id="jnt-ship-content" class="jnt-ship-section" style="display: none;">
+          <h2 class="jnt-ship-section__title">C) Ship Status</h2>
+          <div class="jnt-ship-ready">
+            <p class="jnt-ship-ready__text">All requirements met. Your project is ready for submission.</p>
+            <div class="jnt-ship-ready__status">
+              <span class="jnt-ship-ready__badge">✓ Ready to Ship</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="jnt-ship-actions">
+          <a href="07-test.html" id="jnt-ship-go-test" class="jnt-proof-btn jnt-proof-btn--secondary">Go to Test</a>
+          <a href="proof.html" id="jnt-ship-go-proof" class="jnt-proof-btn jnt-proof-btn--secondary">Go to Proof</a>
+          <button type="button" id="jnt-ship-btn" class="jnt-proof-btn jnt-proof-btn--primary" style="display: none;">Ship Project</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../js/test-checklist.js"></script>
+  <script src="../js/proof-links.js"></script>
+  <script src="08-ship.js"></script>
+</body>
+</html>

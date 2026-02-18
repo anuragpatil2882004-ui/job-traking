@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Saved</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="saved.html" class="jnt-nav__link is-active">Saved</a></li>
+        <li><a href="digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="jt/proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="jt/07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="jt/08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div id="jnt-saved-empty" class="jnt-empty">
+        <h2 class="jnt-empty__title">Saved</h2>
+        <p class="jnt-empty__subtext">Jobs you save will appear here. No items yet.</p>
+      </div>
+      <div id="jnt-saved-grid" class="jnt-job-grid" style="display: none;"></div>
+    </main>
+  </div>
+
+  <div id="jnt-modal-overlay" class="jnt-modal-overlay" aria-hidden="true">
+    <div class="jnt-modal" role="dialog" aria-modal="true">
+      <div class="jnt-modal__header">
+        <h2 id="jnt-modal-title" class="jnt-modal__title"></h2>
+        <button type="button" id="jnt-modal-close" class="jnt-modal__close" aria-label="Close">×</button>
+      </div>
+      <div id="jnt-modal-body" class="jnt-modal__body"></div>
+      <p id="jnt-modal-skills" class="jnt-modal__skills"></p>
+    </div>
+  </div>
+
+  <div id="jnt-toast" class="jnt-toast" role="status" aria-live="polite" style="display: none;"></div>
+
+  <script src="app.js"></script>
+  <script src="js/test-checklist.js"></script>
+  <script src="js/status.js"></script>
+  <script src="data/jobs.js"></script>
+  <script src="js/saved.js"></script>
+</body>
+</html>

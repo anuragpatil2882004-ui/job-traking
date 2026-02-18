@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Digest</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="digest.html" class="jnt-nav__link is-active">Digest</a></li>
+        <li><a href="settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="jt/proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="jt/07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="jt/08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div id="jnt-digest-block" class="jnt-digest-block">
+        <div id="jnt-digest-no-prefs" class="jnt-digest-block__message" style="display: none;">
+          Set preferences to generate a personalized digest. <a href="settings.html">Go to Settings</a>
+        </div>
+
+        <div id="jnt-digest-generate-wrap" class="jnt-digest-generate-wrap" style="display: none;">
+          <button type="button" id="jnt-digest-generate-btn" class="kn-btn kn-btn--primary">Generate Today's 9AM Digest (Simulated)</button>
+        </div>
+
+        <div id="jnt-digest-no-matches" class="jnt-digest-block__message" style="display: none;">
+          No matching roles today. Check again tomorrow.
+        </div>
+
+        <div id="jnt-digest-empty" class="jnt-empty" style="display: none;">
+          <h2 class="jnt-empty__title">Digest</h2>
+          <p class="jnt-empty__subtext">Generate your first digest above.</p>
+        </div>
+
+        <div id="jnt-digest-card-wrap" style="display: none;">
+          <div class="jnt-digest-card">
+            <div class="jnt-digest-card__header">
+              <h2 id="jnt-digest-card-title" class="jnt-digest-card__title">Top 10 Jobs For You — 9AM Digest</h2>
+              <p id="jnt-digest-card-date" class="jnt-digest-card__date"></p>
+            </div>
+            <ul id="jnt-digest-card-list" class="jnt-digest-card__list"></ul>
+            <p id="jnt-digest-card-footer" class="jnt-digest-card__footer">This digest was generated based on your preferences.</p>
+          </div>
+          <div class="jnt-digest-actions">
+            <button type="button" id="jnt-digest-copy-btn" class="kn-btn kn-btn--secondary">Copy Digest to Clipboard</button>
+            <a id="jnt-digest-mailto-btn" href="#" class="kn-btn kn-btn--secondary">Create Email Draft</a>
+          </div>
+          <p class="jnt-digest-demo-note">Demo Mode: Daily 9AM trigger simulated manually.</p>
+        </div>
+
+        <div id="jnt-digest-updates-wrap" class="jnt-digest-updates">
+          <h3 class="jnt-digest-updates__title">Recent Status Updates</h3>
+          <ul id="jnt-digest-updates-list" class="jnt-digest-updates__list"></ul>
+          <p id="jnt-digest-updates-empty" class="jnt-digest-updates__empty">No recent status updates.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="js/test-checklist.js"></script>
+  <script src="js/preferences.js"></script>
+  <script src="js/status.js"></script>
+  <script src="data/jobs.js"></script>
+  <script src="js/digest.js"></script>
+  <script src="js/digest-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Test Checklist</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="../index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="../dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="../saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="../digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="../settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="07-test.html" class="jnt-nav__link is-active">Test</a></li>
+        <li><a href="08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div class="jnt-test-page">
+        <!-- Test Summary -->
+        <div class="jnt-test-summary">
+          <div class="jnt-test-summary__item">
+            <span class="jnt-test-summary__label">Tests completed</span>
+            <span id="jnt-test-summary-count" class="jnt-test-summary__status">0/10 PASSED</span>
+          </div>
+        </div>
+
+        <!-- Test Checklist -->
+        <section class="jnt-test-section" aria-labelledby="jnt-test-heading">
+          <h2 id="jnt-test-heading" class="jnt-test-section__title">A) Test Checklist</h2>
+          
+          <ul id="jnt-test-checklist" class="jnt-test-checklist" role="list">
+            <li class="jnt-test-checklist__item" data-index="0">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Preferences persist after refresh">
+                <span class="jnt-test-checklist__text">Preferences persist after refresh</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="1">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Match score calculates correctly">
+                <span class="jnt-test-checklist__text">Match score calculates correctly</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="2">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Show only matches toggle works">
+                <span class="jnt-test-checklist__text">"Show only matches" toggle works</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="3">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Save job persists after refresh">
+                <span class="jnt-test-checklist__text">Save job persists after refresh</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="4">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Apply opens in new tab">
+                <span class="jnt-test-checklist__text">Apply opens in new tab</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="5">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Status update persists after refresh">
+                <span class="jnt-test-checklist__text">Status update persists after refresh</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="6">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Status filter works correctly">
+                <span class="jnt-test-checklist__text">Status filter works correctly</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="7">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Digest generates top 10 by score">
+                <span class="jnt-test-checklist__text">Digest generates top 10 by score</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="8">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="Digest persists for the day">
+                <span class="jnt-test-checklist__text">Digest persists for the day</span>
+              </label>
+            </li>
+            <li class="jnt-test-checklist__item" data-index="9">
+              <label class="jnt-test-checklist__label">
+                <input type="checkbox" class="jnt-test-checklist__input" aria-label="No console errors on main pages">
+                <span class="jnt-test-checklist__text">No console errors on main pages</span>
+              </label>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="jnt-test-actions">
+          <button type="button" id="jnt-test-reset-btn" class="jnt-proof-btn jnt-proof-btn--secondary">Reset Test Status</button>
+          <button type="button" id="jnt-test-save-btn" class="jnt-proof-btn jnt-proof-btn--primary">Save Progress</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../js/test-checklist.js"></script>
+  <script src="07-test.js"></script>
+</body>
+</html>

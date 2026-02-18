@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Proof & Submission</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="../index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="../dashboard.html" class="jnt-nav__link">Dashboard</a></li>
+        <li><a href="../saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="../digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="../settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="proof.html" class="jnt-nav__link is-active">Proof</a></li>
+        <li><a href="07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div class="jnt-proof-page">
+        <!-- Status Summary -->
+        <div class="jnt-proof-summary">
+          <div class="jnt-proof-summary__item">
+            <span class="jnt-proof-summary__label">Built-in test checklist available</span>
+            <span class="jnt-proof-summary__status jnt-proof-summary__status--completed">COMPLETED</span>
+          </div>
+          <div class="jnt-proof-summary__item">
+            <span class="jnt-proof-summary__label">Proof & submission ready</span>
+            <span class="jnt-proof-summary__status jnt-proof-summary__status--pending">PENDING</span>
+          </div>
+        </div>
+
+        <!-- Artifact Collection -->
+        <section class="jnt-proof-section" aria-labelledby="jnt-proof-artifacts-heading">
+          <h2 id="jnt-proof-artifacts-heading" class="jnt-proof-section__title">B) Artifact Collection Inputs</h2>
+          
+          <div class="jnt-proof-artifacts">
+            <div class="jnt-form-group">
+              <label for="jnt-proof-lovable" class="jnt-form-group__label">Lovable Project Link</label>
+              <input type="url" id="jnt-proof-lovable" class="jnt-proof-input" placeholder="https://lovable.dev/your-project" autocomplete="url">
+              <span id="jnt-proof-lovable-error" class="jnt-proof-input-error" aria-live="polite"></span>
+            </div>
+            
+            <div class="jnt-form-group">
+              <label for="jnt-proof-github" class="jnt-form-group__label">GitHub Repository Link</label>
+              <input type="url" id="jnt-proof-github" class="jnt-proof-input" placeholder="https://github.com/user/repo" autocomplete="url">
+              <span id="jnt-proof-github-error" class="jnt-proof-input-error" aria-live="polite"></span>
+            </div>
+            
+            <div class="jnt-form-group">
+              <label for="jnt-proof-deployed" class="jnt-form-group__label">Deployed URL (Vercel or equivalent)</label>
+              <input type="url" id="jnt-proof-deployed" class="jnt-proof-input" placeholder="https://your-app.vercel.app" autocomplete="url">
+              <span id="jnt-proof-deployed-error" class="jnt-proof-input-error" aria-live="polite"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="jnt-proof-actions">
+          <button type="button" id="jnt-proof-save-btn" class="jnt-proof-btn jnt-proof-btn--primary">Save Proof Details</button>
+          <button type="button" id="jnt-proof-copy-btn" class="jnt-proof-btn jnt-proof-btn--secondary">Copy Final Submission</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../js/test-checklist.js"></script>
+  <script src="../js/proof-links.js"></script>
+  <script src="proof.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker — Dashboard</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="jnt-app">
+    <nav class="jnt-nav">
+      <a href="index.html" class="jnt-nav__brand">Job Notification Tracker</a>
+      <button type="button" class="jnt-nav__toggle" aria-label="Toggle menu">
+        <span class="jnt-nav__toggle-icon"></span>
+      </button>
+      <ul class="jnt-nav__links">
+        <li><a href="dashboard.html" class="jnt-nav__link is-active">Dashboard</a></li>
+        <li><a href="saved.html" class="jnt-nav__link">Saved</a></li>
+        <li><a href="digest.html" class="jnt-nav__link">Digest</a></li>
+        <li><a href="settings.html" class="jnt-nav__link">Settings</a></li>
+        <li><a href="jt/proof.html" class="jnt-nav__link">Proof</a></li>
+        <li><a href="jt/07-test.html" class="jnt-nav__link">Test</a></li>
+        <li><a href="jt/08-ship.html" id="jnt-nav-ship" class="jnt-nav__link">Ship</a></li>
+      </ul>
+    </nav>
+
+    <main class="jnt-main">
+      <div id="jnt-dashboard-banner" class="jnt-dashboard-banner" style="display: none;"></div>
+
+      <div id="jnt-threshold-row" class="jnt-threshold-row" style="display: none;">
+        <label class="jnt-threshold-toggle">
+          <input type="checkbox" id="jnt-threshold-toggle" aria-label="Show only jobs above my threshold">
+          Show only jobs above my threshold
+        </label>
+      </div>
+
+      <div id="jnt-filter-bar" class="jnt-filter-bar">
+        <div class="jnt-filter-group jnt-filter-search">
+          <input type="text" id="jnt-filter-keyword" class="kn-input" placeholder="Search title or company" autocomplete="off">
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-location">Location</label>
+          <select id="jnt-filter-location"></select>
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-mode">Mode</label>
+          <select id="jnt-filter-mode"></select>
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-experience">Experience</label>
+          <select id="jnt-filter-experience"></select>
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-source">Source</label>
+          <select id="jnt-filter-source"></select>
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-status">Status</label>
+          <select id="jnt-filter-status">
+            <option value="">All</option>
+            <option value="Not Applied">Not Applied</option>
+            <option value="Applied">Applied</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Selected">Selected</option>
+          </select>
+        </div>
+        <div class="jnt-filter-group">
+          <label for="jnt-filter-sort">Sort</label>
+          <select id="jnt-filter-sort"></select>
+        </div>
+      </div>
+
+      <div id="jnt-empty-filtered" class="jnt-empty-state-filtered" style="display: none;">
+        <h2 class="jnt-empty-state-filtered__title">No roles match your criteria.</h2>
+        <p class="jnt-empty-state-filtered__subtext">Adjust filters or lower threshold.</p>
+      </div>
+
+      <div id="jnt-job-grid" class="jnt-job-grid"></div>
+    </main>
+  </div>
+
+  <div id="jnt-modal-overlay" class="jnt-modal-overlay" aria-hidden="true">
+    <div class="jnt-modal" role="dialog" aria-modal="true">
+      <div class="jnt-modal__header">
+        <h2 id="jnt-modal-title" class="jnt-modal__title"></h2>
+        <button type="button" id="jnt-modal-close" class="jnt-modal__close" aria-label="Close">×</button>
+      </div>
+      <div id="jnt-modal-body" class="jnt-modal__body"></div>
+      <p id="jnt-modal-skills" class="jnt-modal__skills"></p>
+    </div>
+  </div>
+
+  <div id="jnt-toast" class="jnt-toast" role="status" aria-live="polite" style="display: none;"></div>
+
+  <script src="app.js"></script>
+  <script src="js/test-checklist.js"></script>
+  <script src="js/preferences.js"></script>
+  <script src="js/status.js"></script>
+  <script src="data/jobs.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
